@@ -63,7 +63,7 @@ LOOP_INTERVAL=10				# loop interval in seconds
 RESTART_STREAMRIPPER_INTERVAL=900		# restart interval streamripper
 STREAMRIPPER_START=0 				# start streamripper [0/1]
 ADD_TIMESTAMP=0					# add Timestamp to the Filename
-USER_AGENT="Streamripper/1.x"			# streamripper useragent
+USER_AGENT="Winamp/5"			# streamripper useragent
 STREAMRIPPER_OPTS="-o always -T"		# streamripper options
 
 E_NOARGS=65					# standard errorlevel definition
