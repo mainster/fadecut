@@ -63,7 +63,7 @@ LOOP_INTERVAL=10				# loop interval in seconds
 RESTART_STREAMRIPPER_INTERVAL=900		# restart interval streamripper
 STREAMRIPPER_START=0 				# start streamripper [0/1]
 ADD_TIMESTAMP=0					# add Timestamp to the Filename
-USER_AGENT="Winamp/5"			# streamripper useragent
+USER_AGENT="Streamripper/1.x"			# streamripper useragent
 STREAMRIPPER_OPTS="-o always -T"		# streamripper options
 
 E_NOARGS=65					# standard errorlevel definition
@@ -563,7 +563,9 @@ COMMENT=\"Your Comment\"
 FADE_IN=1
 FADE_OUT=4
 # TRIM_BEGIN=0
-# TRIM_END=0" > "$PROFILEDIR/profiles/$NEW"
+# TRIM_END=0
+# USER_AGENT=\"Streamripper/1.x\"
+USER_AGENT=\"Winamp/5\"" > "$PROFILEDIR/profiles/$NEW"
 logging -i "Starting $Editor editor"
 $Editor "$PROFILEDIR/profiles/$NEW"
 logging -i "Now start: fadecut -r -p $NEW [optional other options]"
@@ -620,6 +622,10 @@ fi
 if [ -z "$FADE_OUT" ]; then 
   RetCheckProfile=1
   MissingVar="FADE_OUT $MissingVar"
+fi
+if [ -z "$USER_AGENT" ]; then 
+  RetCheckProfile=1
+  MissingVar="USER_AGENT $MissingVar"
 fi
 
 if [ $RetCheckProfile -eq 1 ]; 
